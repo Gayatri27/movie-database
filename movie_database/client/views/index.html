@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="nodeTodo">
+  <head>
+    <title>Movie Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/stylesheets/style.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <style>
+body {
+    font-family: "Tangerine", serif;
+    background-image: url("images/b.jpeg");
+
+}
+
+* {
+    box-sizing: border-box;
+
+}
+form{
+  width: 45%;
+  float:right;
+
+}
+form.example input[placeholder] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    font-family: "Tangerine", serif;
+    font-size: 30px;
+}
+
+form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 26px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.header {
+    background: rgba(157, 194, 226, 0.6);
+    color: white;
+    clear: left;
+    font-size: 50px;
+    text-align: center;
+    font-family: "Tangerine", serif;
+}
+
+</style>
+
+  </head>
+  <body ng-controller="mainController">
+    <div class="container">
+
+      <div class="header">
+        <h1>Welcome to Movie Database</h1>
+        <hr>
+        
+      </div>
+      <div >
+        <form>
+          <div class="example">
+            <input type="text" class="form-control input-lg" placeholder="Enter text..." ng-model="formData.text">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="createTodo()">Search</button>
+        </form>
+      </div>
+      <br>
+      <div class="todo-list">
+        <ul ng-repeat="todo in todoData">
+          <li><h3><input class="lead" type="checkbox">&nbsp;{{ todo.mov_id }}</h3></li><hr>
+        </ul>
+      </div>
+    </div>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+    <script src="javascripts/app.js"></script>
+  </body>
+</html>
