@@ -11,37 +11,35 @@
     <style>
 body {
     font-family: "Tangerine", serif;
+
     background-image: url("images/b.jpeg");
 
 }
 
 * {
     box-sizing: border-box;
+    font-size: 30px;
 
 }
-form{
-  width: 45%;
-  float:right;
 
-}
-form.example input[placeholder] {
+form {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
-    float: left;
-    width: 80%;
+    float: right;
+    width: 100%;
     background: #f1f1f1;
-    font-family: "Tangerine", serif;
-    font-size: 30px;
+
+
+
 }
 
 form.example button {
     float: left;
     width: 20%;
-    padding: 10px;
+    padding: 5px;
     background: #2196F3;
     color: white;
-    font-size: 26px;
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
@@ -58,9 +56,9 @@ form.example::after {
 }
 .header {
     background: rgba(157, 194, 226, 0.6);
+    padding-top: 1px;
     color: white;
     clear: left;
-    font-size: 50px;
     text-align: center;
     font-family: "Tangerine", serif;
 }
@@ -68,6 +66,17 @@ form.example::after {
 clear: both;
 float:right;
 margin-top:30px;
+}
+.container {
+  background:;
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+    margin-top: 10px;
+    max-width: 40%;
+    padding: 16px;
+
+
 }
 
 </style>
@@ -84,19 +93,23 @@ function myFunction() {
 
   </head>
   <body ng-controller="mainController">
-    <div class="container">
+    <div class="header" >
+      <h1 style="font-size: 60px">Welcome to Movie Database</h1>
+      <hr>
 
-      <div class="header">
-        <h1>Welcome to Movie Database</h1>
-        <hr>
-        
-      </div>
+    </div>
+<div class="container">
+
+
       <div style="width:100%">
         <form>
-          <div class="example" >
-            <input type="text" class="form-control input-lg" placeholder="Enter text..." ng-model="formData.text">
+          <div class="example">
+            <input type="text" class="form-control input-lg" placeholder="Enter your search here" ng-model="formData.text" style="font-size: 30px">
+            <h4><b><input type="radio" name="gender" value="male"> Movie &nbsp;
+			<input type="radio" name="gender" value="female"> Director &nbsp;
+			<input type="radio" name="gender" value="other"> Actor </b></h4>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="myFunction()">Search</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="myFunction()" style="font-size: 30px">Search</button>
         </form>
       </div>
       <div id = "myDIV" class="todo-list">
@@ -106,7 +119,7 @@ function myFunction() {
 		  <td><h2><b>Movie Year&nbsp;</b></h2></td>
 		  <td><h2><b>Movie Time&nbsp;</b></h2></td>
 		  <td><h2><b>Movie Language&nbsp;</b></h2></td>
-		  <td><h2><b>Country</b></h2></td>
+		  <td><h2><b>Country&nbsp;</b></h2></td>
         </tr>
         <tr ng-repeat="todo in todoData">
 		  <td><h3><b>&nbsp;{{ todo.mov_title }}</b></h3></td>
