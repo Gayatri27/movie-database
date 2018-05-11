@@ -20,7 +20,7 @@ router.get('/api/v1/todos', (req, res, next) => {
       return res.status(500).json({success: false, data: err});
     }
     // SQL Query > Select Data
-    const query = client.query('SELECT * FROM movie;');
+    const query = client.query("SELECT * FROM movie where mov_title LIKE 'S%';");
     // Stream results back one row at a time
     query.on('row', (row) => {
       results.push(row);
