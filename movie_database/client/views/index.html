@@ -64,6 +64,11 @@ form.example::after {
     text-align: center;
     font-family: "Tangerine", serif;
 }
+.todo-list{
+clear: both;
+float:right;
+margin-top:30px;
+}
 
 </style>
 <script>
@@ -86,27 +91,29 @@ function myFunction() {
         <hr>
         
       </div>
-      <div style="clear:both">
+      <div style="width:100%">
         <form>
-          <div class="example" style="width:100%">
+          <div class="example" >
             <input type="text" class="form-control input-lg" placeholder="Enter text..." ng-model="formData.text">
           </div>
           <button type="submit" class="btn btn-primary btn-lg btn-block" onclick="myFunction()">Search</button>
         </form>
       </div>
-	  <div>
-	  </div>
       <div id = "myDIV" class="todo-list">
 	  <table border="1" style="background-color:white">
 	  <tr>
 		  <td><h2><b>Movie Title</b></h2></td>
-		  <td><h2><b>Movie Year</b></h2></td>
-		  <td><h2><b>Movie Language</b></h2></td>
+		  <td><h2><b>Movie Year&nbsp;</b></h2></td>
+		  <td><h2><b>Movie Time&nbsp;</b></h2></td>
+		  <td><h2><b>Movie Language&nbsp;</b></h2></td>
+		  <td><h2><b>Country</b></h2></td>
         </tr>
         <tr ng-repeat="todo in todoData">
 		  <td><h3><b>&nbsp;{{ todo.mov_title }}</b></h3></td>
 		  <td><h3><b> &nbsp;{{ todo.mov_year }}</b></h3></td>
+		    <td><h3><b>&nbsp;{{ todo.mov_time }}</b></h3></td>
 		  <td><h3><b>&nbsp;{{ todo.mov_lang }}</b></h3></td>
+		  <td><h3><b> &nbsp;{{ todo.mov_rel_country }}</b></h3></td>
         </tr>
 		</table>
       </div>
